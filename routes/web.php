@@ -14,3 +14,21 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('hello/{msg?}', function ($msg = 'no message.') {
+$html = <<<EOF
+<html>
+<head>
+    <title>Hello</title>
+</head>
+<body>
+    <h1>
+        Hello
+    </h1>
+    <p>{$msg}</p>
+    <p>これはサンプルで作ったページです。</p>
+</body>
+</html>
+EOF;
+return $html;
+});
