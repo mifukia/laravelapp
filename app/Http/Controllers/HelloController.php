@@ -7,16 +7,21 @@ use Illuminate\Http\Response;
 
 class HelloController extends Controller
 {
+    private $data = [
+        'one',
+        'two',
+        'three',
+        'four'
+    ];
     public function index(){
-        $data = [
-            'msg' => '',
-        ];
-        return view('hello.index',$data);
+        return view('hello.index',[
+            'data' => $this -> data
+        ]);
     }
     public function post(Request $request){
-        $data = [
+        return view('hello.index',[
+            'data' => $this -> data,
             'msg' => $request -> msg,
-        ];
-        return view('hello.index',$data);
+        ]);
     }
 }

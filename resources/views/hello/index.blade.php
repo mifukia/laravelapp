@@ -7,7 +7,7 @@
         </style>
         <body>
             <h1>Blade/Index</h1>
-            @unless ($msg == '')
+            @isset ($msg)
             <p>こんにちは、{{$msg}}さん。</p>
             @else
             <p>何か書いてください。</p>
@@ -17,6 +17,11 @@
                 <input type="text" name="msg">
                 <input type="submit">
             </form>
+            <ol>
+            @foreach($data as $item)
+            <li>{{$item}}</li>
+            @endforeach
+            </ol>
         </body>
     </head>
 </html>
