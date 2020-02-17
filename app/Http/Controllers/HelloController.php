@@ -8,10 +8,9 @@ use Illuminate\Http\Response;
 class HelloController extends Controller
 {
     private $data = [
-        'one',
-        'two',
-        'three',
-        'four'
+        ['name' => 'yamada taro','mail' => 'taro@yamada'],
+        ['name' => 'tanaka hanako','mail' => 'hanako@tanaka'],
+        ['name' => 'suzuki sachiko','mail' =>'sachiko@suzuki']
     ];
     public function index(){
         return view('hello.index',[
