@@ -7,14 +7,9 @@ use Illuminate\Http\Response;
 
 class HelloController extends Controller
 {
-    private $data = [
-        ['name' => 'yamada taro','mail' => 'taro@yamada'],
-        ['name' => 'tanaka hanako','mail' => 'hanako@tanaka'],
-        ['name' => 'suzuki sachiko','mail' =>'sachiko@suzuki']
-    ];
-    public function index(){
+    public function index(Request $request){
         return view('hello.index',[
-            'data' => $this -> data,
+            'data' => $request -> data,
             'message' => 'Hello!'
         ]);
     }
